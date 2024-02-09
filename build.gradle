@@ -6,9 +6,7 @@ plugins {
 group = 'com.gradle'
 version = '0.0.1'
 
-
 java {
-
 }
 
 repositories {
@@ -24,12 +22,11 @@ publishing {
     }
     repositories {
         maven {
-            url = uri("http://localhost:8081/dinhnguyendev/spring-core-gradle")
-			credentials {
-				username = "username"
-				password = "password"
-			}
-            allowInsecureProtocol = true
+            url = uri("https://github.com/dinhnguyendev/dinhnguyendev-spring-core-gradle")
+            credentials {
+                username = System.getenv("GITHUB_USERNAME")
+                password = System.getenv("GITHUB_TOKEN")
+            }
         }
     }
 }
